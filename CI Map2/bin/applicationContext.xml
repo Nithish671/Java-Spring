@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ans1" class="com.CIm2.Answer">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value='Java is a programming language!'></constructor-arg>
+		<constructor-arg value="10/25/2000" type="Date"></constructor-arg></bean>
+	<bean id="ans2" class="com.CIm2.Answer">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Java is a platform!"></constructor-arg>
+		<constructor-arg value="11/6/2002" type="Date"></constructor-arg></bean>
+	<bean class="com.CIm2.User" id="user1">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Gojo"></constructor-arg>
+		<constructor-arg value="gojo@jjk.com"></constructor-arg></bean>
+	<bean class="com.CIm2.User" id="user2">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Zoro"></constructor-arg>
+		<constructor-arg value="zoro@op.com"></constructor-arg></bean>
+	<bean id="que" class="com.CIm2.Question">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="What is Java?"></constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key-ref="ans1" value-ref="user1"></entry>
+				<entry key-ref="ans2" value-ref="user2"></entry></map></constructor-arg></bean></beans>

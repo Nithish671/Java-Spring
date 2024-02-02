@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ans1" class="com.sic2.Answer">
+		<property name="id" value="1"></property>
+		<property name="name" value="Dragon Ball is a Game!"></property>
+		<property name="by" value="Gojo"></property></bean>
+	<bean id="ans2" class="com.sic2.Answer">
+		<property name="id" value="2"></property>
+		<property name="name" value="Dragon Ball is a Anime!"></property>
+		<property name="by" value="Goku"></property></bean>
+	<bean id="ans3" class="com.sic2.Answer">
+		
+		<property name="id" value="3"></property>
+		<property name="name" value="Dragon Ball is a Comic!"></property><property name="by" value="Zoro"></property></bean>
+	<bean id="que" class="com.sic2.Question">
+		<property name="id" value="1"></property>
+		<property name="name" value="What is Dragon Ball?"></property>
+		<property name="ans">
+			<list>
+				<ref bean="ans1" />
+				<ref bean="ans2" />
+				<ref bean="ans3" /></list></property></bean></beans>

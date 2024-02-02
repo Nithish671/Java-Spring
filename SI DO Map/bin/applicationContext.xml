@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="ans1" class="com.sido.Answer">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Naruto is Food!"></constructor-arg>
+		<constructor-arg value="10/25/2000"></constructor-arg>
+	</bean>
+	<bean id="user1" class="com.sido.User">
+		<constructor-arg value="1"></constructor-arg>
+		<constructor-arg value="Gojo"></constructor-arg>
+		<constructor-arg value="gojo@jjk.com"></constructor-arg></bean>
+	
+	<bean id="ans2" class="com.sido.Answer">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Naruto is a Anime!"></constructor-arg>
+		<constructor-arg value="11/02/2002"></constructor-arg></bean>
+	<bean id="user2" class="com.sido.User">
+		<constructor-arg value="2"></constructor-arg>
+		<constructor-arg value="Zoro"></constructor-arg>
+		<constructor-arg value="zoro@op.com"></constructor-arg></bean>
+	<bean id="que" class="com.sido.Question">
+		<property name="id" value="1"></property>
+		<property name="name" value="What is Naruto?"></property>
+		<property name="anss">
+			<map>
+				<entry key-ref="ans1" value-ref="user1"></entry>
+				<entry key-ref="ans2" value-ref="user2"></entry></map></property></bean></beans>

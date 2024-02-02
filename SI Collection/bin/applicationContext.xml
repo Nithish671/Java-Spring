@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="que" class="com.sic.Question">
+		<property name="id" value="1"></property>
+		<property name="name" value="What is One Piece?"></property>
+		<property name="ans">
+			<list>
+				<value>One Piece is an Anime!</value>
+				<value>One Piece is an Treasure!</value>
+				<value>One Piece is an Comic!</value></list></property></bean></beans>

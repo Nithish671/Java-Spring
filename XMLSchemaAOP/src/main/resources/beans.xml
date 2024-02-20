@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+	<aop:config>
+		<aop:aspect id="log" ref="logging">
+			<aop:pointcut expression="execution(* com.example.Student.getName(..))" id="intro" />
+			<aop:pointcut expression="execution(* com.example.*.*(..))" id="selectAll" /><aop:pointcut
+				expression="execution(* com.example.Student.AfterThrowingAdvice(..))" id="excEx" />
+			<aop:before
+				method="beforeAdvice" pointcut-ref="intro" ></aop:before>
+			
+			<aop:after
+				method="afterAdvice" pointcut-ref="selectAll" /><aop:after-returning method="afterReturningAdvice" pointcut-ref="selectAll" returning="retVal" ></aop:after-returning><aop:after-throwing method="AfterThrowingAdvice" pointcut-ref="excEx" throwing="ex" /></aop:aspect></aop:config>
+	<bean id="student" class="com.example.Student">
+		<property name="name" value="Zoro"></property>
+		<property name="age" value="21"></property></bean>
+	<bean id="logging" class="com.example.Logging"></bean></beans>
